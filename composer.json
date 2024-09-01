@@ -1,0 +1,23 @@
+{
+    "name": "tsyren/sitemap-generator",
+    "description": "SitemapGenerator is a convenient library for automatic generation of site maps in XML, CSV and JSON formats",
+    "type": "library",
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sitemap\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tsyren",
+            "email": "allan.petrison@yandex.ru"
+        }
+    ]
+}
