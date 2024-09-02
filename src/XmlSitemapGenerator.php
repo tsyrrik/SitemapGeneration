@@ -2,14 +2,16 @@
 
 namespace App;
 
+use App\Validation\FileValidator;
 use App\Exceptions\FileAccessException;
 use App\Exceptions\InvalidDataException;
-use SimpleXMLElement;
-
 class XmlSitemapGenerator extends AbstractSitemapGenerator
 {
     public function generate(array $pages, string $filePath): void
     {
+        // Проверка расширения файла
+        FileValidator::validateExtension($filePath, 'xml');
+
         $this->createDirectoryIfNotExists($filePath);
 
         $xml = new SimpleXMLElement('<urlset/>');
