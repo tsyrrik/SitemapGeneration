@@ -16,7 +16,7 @@ class SitemapGeneratorFactory
             case 'json':
                 return new JsonSitemapGenerator();
             default:
-                throw new Exception('Unsupported sitemap type: ' . $type);
+                throw new Exception('Неподдерживаемый тип ' . $type);
         }
     }
 }

@@ -3,6 +3,8 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 use App\SitemapGeneratorFactory;
+use App\Validation\PageValidator;
+
 
 try {
     $pages = [
@@ -67,6 +69,10 @@ try {
             'changefreq' => 'never',
         ],
     ];
+
+    foreach ($pages as $page) {
+        PageValidator::validate($page);
+    }
 
     $type = 'xml'; // 'csv', 'json'
     $filePath = '/var/www/site.ru/upload/sitemap.' . $type;
